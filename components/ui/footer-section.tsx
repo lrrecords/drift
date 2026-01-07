@@ -62,13 +62,19 @@ export function Footer() {
             <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
                 <AnimatedContainer className="space-y-4">
                     <div className="flex items-center space-x-3">
-                        <span className="text-2xl font-bold tracking-wider uppercase text-white">DRIFT</span>
+                        <div className="flex items-center justify-center h-12 w-12 rounded bg-gradient-to-br from-lr-gold to-lr-bronze border border-lr-gold/50">
+                            <span className="text-black font-black text-xl">LR</span>
+                        </div>
+                        <div className="flex flex-col leading-none">
+                            <span className="text-2xl font-black tracking-wider uppercase text-white">DRIFTER</span>
+                            <span className="text-xs font-bold text-lr-gold tracking-widest uppercase">BY LR RECORDS</span>
+                        </div>
                     </div>
                     <p className="text-white/60 mt-8 text-sm md:mt-0 font-bold tracking-wider uppercase">
-                        THE UNDERGROUND ELECTRONIC MUSIC PLATFORM
+                        THE HEAVY UNDERGROUND MUSIC PLATFORM
                     </p>
-                    <p className="text-white/40 text-xs font-bold tracking-widest uppercase">
-                        © {new Date().getFullYear()} DRIFT. ALL RIGHTS RESERVED.
+                    <p className="text-lr-gold text-xs font-bold tracking-widest uppercase">
+                        © {new Date().getFullYear()} LR RECORDS. ALL RIGHTS RESERVED.
                     </p>
                 </AnimatedContainer>
 
@@ -80,12 +86,12 @@ export function Footer() {
                                 <ul className="text-white/60 mt-4 space-y-3 text-sm">
                                     {section.links.map((link) => (
                                         <li key={link.title}>
-                                            <a
-                                                href={link.href}
-                                                className="hover:text-white inline-flex items-center transition-all duration-300 font-bold tracking-wider uppercase hover:tracking-widest"
-                                            >
-                                                {link.title}
-                                            </a>
+                                        <a
+                                            href={link.href}
+                                            className="hover:text-lr-gold inline-flex items-center transition-all duration-300 font-bold tracking-wider uppercase hover:tracking-widest"
+                                        >
+                                            {link.title}
+                                        </a>
                                         </li>
                                     ))}
                                 </ul>

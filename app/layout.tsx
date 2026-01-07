@@ -6,9 +6,9 @@ import LayoutContent from "@/components/LayoutContent";
 import { AuthProvider } from "@/contexts/AuthContext";
 
 export const metadata: Metadata = {
-  title: "Drift - Discover Electronic Music Venues, Events & Artists",
-  description: "Rate and discover the best electronic music venues, events, and artists. Join the community of music enthusiasts, promoters, and creators.",
-  keywords: "electronic music, venues, events, artists, DJs, clubs, techno, house, reviews, ratings",
+  title: "Drifter - LR Records Electronic Music Platform",
+  description: "Discover and rate the best electronic music venues, events, and artists. The official LR Records community platform for music enthusiasts, promoters, and creators.",
+  keywords: "LR Records, electronic music, venues, events, artists, DJs, clubs, techno, house, drum & bass, reviews, ratings",
 };
 
 export default function RootLayout({

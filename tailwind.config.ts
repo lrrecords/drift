@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Premium color system
+        // LR Records color system
         'drift': {
           'bg': 'var(--color-bg)',
           'surface': 'var(--color-surface)',
@@ -24,6 +24,15 @@ const config: Config = {
           'muted': 'var(--color-muted)',
           'text': 'var(--color-text)',
           'text-secondary': 'var(--color-text-secondary)',
+        },
+        // LR Records brand colors
+        'lr': {
+          'gold': 'var(--lr-gold)',
+          'gold-light': 'var(--lr-gold-light)',
+          'red': 'var(--lr-red)',
+          'red-hover': 'var(--lr-red-hover)',
+          'silver': 'var(--lr-silver)',
+          'bronze': 'var(--lr-bronze)',
         },
       },
       fontFamily: {
