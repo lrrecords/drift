@@ -29,37 +29,45 @@
 }
 
 :root {
-  /* 90s Rave Theme - Authentic Underground Aesthetic */
+  /* LR Records / Drifter Theme - Heavy Underground Aesthetic */
   --color-bg: #000000; /* Pure black */
   --color-surface: #0a0a0a; /* Near black */
   --color-surface-elevated: #141414; /* Slightly elevated */
   --color-border: #1a1a1a; /* Subtle borders */
-  --color-border-hover: #333333; /* Hover state borders */
+  --color-border-hover: #444444; /* Hover state borders */
   
-  /* 90s Neon Palette */
-  --neon-cyan: #00ffff;
-  --neon-yellow: #ffff00;
-  --neon-pink: #ff00ff;
-  --neon-green: #00ff00;
-  --neon-orange: #ff8800;
-  --neon-blue: #0088ff;
+  /* LR Records Brand Colors */
+  --lr-gold: #D4AF37; /* Metallic gold - primary brand color */
+  --lr-gold-light: #E5C158; /* Lighter gold for hover states */
+  --lr-red: #CC0000; /* Deep red accent */
+  --lr-red-hover: #FF0000; /* Brighter red for hover */
+  --lr-silver: #C0C0C0; /* Metallic silver */
+  --lr-bronze: #CD7F32; /* Bronze accent */
   
-  /* Accent colors - More subtle and sophisticated */
-  --color-primary: #ff3333; /* RA-inspired red */
-  --color-primary-hover: #ff5555;
-  --color-secondary: #ffffff; /* Pure white for contrast */
+  /* Accent colors - LR Records inspired */
+  --color-primary: var(--lr-gold); /* Gold primary */
+  --color-primary-hover: var(--lr-gold-light);
+  --color-secondary: var(--lr-silver); /* Metallic silver */
   --color-muted: #666666; /* Muted text */
   --color-text: #ffffff; /* White text */
   --color-text-secondary: #999999; /* Secondary text */
   
   /* Functional colors */
-  --color-success: var(--neon-green);
-  --color-warning: var(--neon-yellow);
-  --color-error: #ff3333;
+  --color-success: #00CC66; /* Green success */
+  --color-warning: var(--lr-gold); /* Gold warning */
+  --color-error: var(--lr-red); /* Red error */
   
   /* Map to CSS variables for compatibility */
   --background: var(--color-bg);
   --foreground: var(--color-text);
+  
+  /* Legacy neon colors for backward compatibility */
+  --neon-cyan: var(--lr-gold);
+  --neon-yellow: var(--lr-gold-light);
+  --neon-pink: var(--lr-red);
+  --neon-green: #00CC66;
+  --neon-orange: var(--lr-bronze);
+  --neon-blue: var(--lr-silver);
 }
 
 * {
@@ -92,50 +100,46 @@ body::before {
   height: 100%;
   background-image: 
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.02;
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: multiply;
 }
 
-/* Typography - 90s Rave Style */
+/* Typography - LR Records Bold Style */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text);
 }
 
-/* 90s Rave Utility Classes */
+/* LR Records Brand Utility Classes */
 @layer utilities {
-  .text-neon-cyan {
-    color: var(--neon-cyan);
-    text-shadow: 0 0 5px var(--neon-cyan);
+  .text-lr-gold {
+    color: var(--lr-gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
   
-  .text-neon-yellow {
-    color: var(--neon-yellow);
-    text-shadow: 0 0 5px var(--neon-yellow);
+  .text-lr-red {
+    color: var(--lr-red);
+    text-shadow: 0 0 5px rgba(204, 0, 0, 0.3);
   }
   
-  .text-neon-pink {
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink);
+  .text-lr-silver {
+    color: var(--lr-silver);
+    text-shadow: 0 0 5px rgba(192, 192, 192, 0.2);
   }
   
-  .text-neon-green {
-    color: var(--neon-green);
-    text-shadow: 0 0 5px var(--neon-green);
+  .bg-lr-gold-glow {
+    background: linear-gradient(135deg, var(--lr-gold), var(--lr-bronze));
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
   }
   
-  .bg-neon-glow {
-    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
-    animation: neon-pulse 2s ease-in-out infinite alternate;
-  }
-  
-  .border-neon {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 10px var(--neon-cyan);
+  .border-lr-gold {
+    border-color: var(--lr-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
   }
   
   .grain-texture {
@@ -143,99 +147,64 @@ h1, h2, h3, h4, h5, h6 {
     background-blend-mode: multiply;
   }
   
-  .glitch-effect {
+  .metallic-shine {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
     position: relative;
   }
   
-  .glitch-effect::before,
-  .glitch-effect::after {
-    content: attr(data-text);
+  .metallic-shine::before {
+    content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-  }
-  
-  .glitch-effect::before {
-    animation: glitch-1 0.5s infinite;
-    color: var(--neon-cyan);
-    z-index: -1;
-  }
-  
-  .glitch-effect::after {
-    animation: glitch-2 0.5s infinite;
-    color: var(--neon-pink);
-    z-index: -2;
-  }
-  
-  .retro-grid {
-    background-image: 
-      linear-gradient(var(--neon-cyan) 1px, transparent 1px),
-      linear-gradient(90deg, var(--neon-cyan) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.1;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    animation: shine 3s infinite;
   }
 }
 
-/* 90s Rave Animations */
-@keyframes neon-pulse {
+/* LR Records Brand Animations */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes gold-pulse {
   from {
-    filter: brightness(1) blur(0px);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
   }
   to {
-    filter: brightness(1.3) blur(1px);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
   }
 }
 
-@keyframes glitch-1 {
-  0%, 14%, 15%, 49%, 50%, 99%, 100% {
-    transform: translateX(0);
-  }
-  15%, 49% {
-    transform: translateX(-2px);
-  }
-}
-
-@keyframes glitch-2 {
-  0%, 20%, 21%, 62%, 63%, 99%, 100% {
-    transform: translateX(0);
-  }
-  21%, 62% {
-    transform: translateX(2px);
-  }
-}
-
-@keyframes scan-lines {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-
-/* Enhanced focus states with neon effects */
+/* Enhanced focus states with gold effects */
 button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--neon-cyan);
+  outline: 2px solid var(--lr-gold);
   outline-offset: 2px;
-  box-shadow: 0 0 10px var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
-/* CRT Monitor effect for cards */
-.crt-effect {
+/* Metallic card effect for premium feel */
+.metallic-card {
   position: relative;
   background: linear-gradient(
-    transparent 50%,
-    rgba(0, 255, 255, 0.03) 50%
+    135deg,
+    rgba(26, 26, 26, 0.9) 0%,
+    rgba(42, 42, 42, 0.9) 50%,
+    rgba(26, 26, 26, 0.9) 100%
   );
-  background-size: 100% 4px;
 }
 
-.crt-effect::after {
+.metallic-card::after {
   content: '';
   position: absolute;
   top: 0;
@@ -245,10 +214,9 @@ select:focus {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.02),
+    rgba(212, 175, 55, 0.05),
     transparent
   );
-  animation: scan-lines 3s linear infinite;
   pointer-events: none;
 }
 
@@ -266,10 +234,9 @@ select:focus {
 /* High contrast mode adjustments */
 @media (prefers-contrast: high) {
   :root {
-    --neon-cyan: #ffffff;
-    --neon-yellow: #ffffff;
-    --neon-pink: #ffffff;
-    --neon-green: #ffffff;
+    --lr-gold: #FFD700;
+    --lr-red: #FF0000;
+    --lr-silver: #FFFFFF;
   }
 }
 

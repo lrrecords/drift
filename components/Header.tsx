@@ -165,12 +165,24 @@ export default function Header() {
           {/* Left side: Logo + Navigation */}
           <div className="flex items-center space-x-8">
             {/* Logo */}
-            <Link href="/" className="group">
+            <Link href="/" className="group flex items-center space-x-3">
+              <motion.div
+                className="relative h-8 w-8 md:h-10 md:w-10"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Image
+                  src="https://content.app-sources.com/s/6438660837687128/uploads/Images/logo-new-noback-0956659.png?format=webp"
+                  alt="LR Records"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
               <motion.span 
-                className="text-xl font-semibold text-white/95 hover:text-white transition-colors duration-300"
+                className="text-xl font-bold text-white/95 hover:text-white transition-colors duration-300 tracking-wider"
                 whileHover={{ scale: 1.02 }}
               >
-                DRIFT<span className="text-white/60 text-sm">®</span>
+                DRIFTER<span className="text-lr-gold text-xs ml-1">BY LR RECORDS</span>
               </motion.span>
             </Link>
 
@@ -181,9 +193,9 @@ export default function Header() {
                   <NavigationMenuItem key={item.title}>
                     {item.items ? (
                       <>
-                        <NavigationMenuTrigger className="bg-transparent text-white/70 hover:text-white hover:bg-white/10 font-bold tracking-wider uppercase text-sm">
-                          {item.title}
-                        </NavigationMenuTrigger>
+                      <NavigationMenuTrigger className="bg-transparent text-white/70 hover:text-lr-gold hover:bg-white/10 font-bold tracking-wider uppercase text-sm transition-colors duration-300">
+                        {item.title}
+                      </NavigationMenuTrigger>
                         <NavigationMenuContent className="!w-[450px] p-6">
                           <div className="flex flex-col gap-6">
                             <div className="flex flex-col">
@@ -221,18 +233,18 @@ export default function Header() {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <NavigationMenuLink
-                        href={item.href}
-                        className={`
-                          bg-transparent text-sm font-bold tracking-wider uppercase transition-all duration-300 px-4 py-2 rounded-md hover:bg-white/10
-                          ${pathname === item.href 
-                            ? 'text-white' 
-                            : 'text-white/70 hover:text-white'
-                          }
-                        `}
-                      >
-                        {item.title}
-                      </NavigationMenuLink>
+                        <NavigationMenuLink
+                          href={item.href}
+                          className={`
+                            bg-transparent text-sm font-bold tracking-wider uppercase transition-all duration-300 px-4 py-2 rounded-md hover:bg-white/10
+                            ${pathname === item.href 
+                              ? 'text-lr-gold' 
+                              : 'text-white/70 hover:text-lr-gold'
+                            }
+                          `}
+                        >
+                          {item.title}
+                        </NavigationMenuLink>
                     )}
                   </NavigationMenuItem>
                 ))}
@@ -472,7 +484,7 @@ export default function Header() {
                   </Link>
                   <Link href="/auth/signin?mode=register">
                     <motion.button
-                      className="px-4 py-2 bg-white/95 hover:bg-white text-black text-sm font-medium rounded-lg transition-all duration-300 shadow-lg"
+                      className="px-4 py-2 bg-lr-gold hover:bg-lr-gold-light text-black text-sm font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-lr-gold/50"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -809,10 +821,10 @@ export default function Header() {
                     </Link>
                     <Link href="/auth/signin?mode=register">
                       <button 
-                        className="block w-full text-center px-6 py-4 bg-white/95 hover:bg-white text-black rounded-lg transition-all duration-200 font-medium min-h-[48px] flex items-center justify-center"
+                        className="block w-full text-center px-6 py-4 bg-lr-gold hover:bg-lr-gold-light text-black rounded-lg transition-all duration-300 font-bold min-h-[48px] flex items-center justify-center shadow-lg"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        JOIN DRIFT
+                        JOIN DRIFTER
                       </button>
                     </Link>
                   </>
