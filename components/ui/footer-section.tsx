@@ -62,18 +62,16 @@ export function Footer() {
             <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
                 <AnimatedContainer className="space-y-4">
                     <div className="flex items-center space-x-3">
-                        <div className="relative h-10 w-10">
-                            <Image
-                                src="https://content.app-sources.com/s/6438660837687128/uploads/Images/logo-new-noback-0956659.png?format=webp"
-                                alt="LR Records"
-                                fill
-                                className="object-contain"
-                            />
+                        <div className="flex items-center justify-center h-12 w-12 rounded bg-gradient-to-br from-lr-gold to-lr-bronze border border-lr-gold/50">
+                            <span className="text-black font-black text-xl">LR</span>
                         </div>
-                        <span className="text-2xl font-bold tracking-wider uppercase text-white">DRIFTER</span>
+                        <div className="flex flex-col leading-none">
+                            <span className="text-2xl font-black tracking-wider uppercase text-white">DRIFTER</span>
+                            <span className="text-xs font-bold text-lr-gold tracking-widest uppercase">BY LR RECORDS</span>
+                        </div>
                     </div>
                     <p className="text-white/60 mt-8 text-sm md:mt-0 font-bold tracking-wider uppercase">
-                        BY LR RECORDS - THE HEAVY UNDERGROUND MUSIC PLATFORM
+                        THE HEAVY UNDERGROUND MUSIC PLATFORM
                     </p>
                     <p className="text-lr-gold text-xs font-bold tracking-widest uppercase">
                         © {new Date().getFullYear()} LR RECORDS. ALL RIGHTS RESERVED.

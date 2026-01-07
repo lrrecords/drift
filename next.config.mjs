@@ -17,9 +17,21 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: new URL(process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jwxlskzmmdrwrlljtfdi.supabase.co').hostname,
+        hostname: 'content.app-sources.com',
         port: '',
-        pathname: '/storage/v1/object/public/**',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jwxlskzmmdrwrlljtfdi.supabase.co',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+        port: '',
+        pathname: '/**',
       },
     ],
   },

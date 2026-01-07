@@ -165,25 +165,20 @@ export default function Header() {
           {/* Left side: Logo + Navigation */}
           <div className="flex items-center space-x-8">
             {/* Logo */}
-            <Link href="/" className="group flex items-center space-x-3">
+            <Link href="/" className="group flex items-center space-x-2">
               <motion.div
-                className="relative h-8 w-8 md:h-10 md:w-10"
+                className="flex flex-col items-center justify-center h-10 w-10 rounded bg-gradient-to-br from-lr-gold to-lr-bronze border border-lr-gold/50"
                 whileHover={{ scale: 1.05 }}
               >
-                <Image
-                  src="https://content.app-sources.com/s/6438660837687128/uploads/Images/logo-new-noback-0956659.png?format=webp"
-                  alt="LR Records"
-                  fill
-                  className="object-contain"
-                  priority
-                />
+                <span className="text-black font-black text-lg">LR</span>
               </motion.div>
-              <motion.span 
-                className="text-xl font-bold text-white/95 hover:text-white transition-colors duration-300 tracking-wider"
+              <motion.div 
+                className="flex flex-col leading-none"
                 whileHover={{ scale: 1.02 }}
               >
-                DRIFTER<span className="text-lr-gold text-xs ml-1">BY LR RECORDS</span>
-              </motion.span>
+                <span className="text-xl font-black text-white tracking-wider">DRIFTER</span>
+                <span className="text-[10px] font-bold text-lr-gold tracking-widest">BY LR RECORDS</span>
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
